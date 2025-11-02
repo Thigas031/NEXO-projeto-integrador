@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 # main.py
 import customtkinter as ctk
 import os

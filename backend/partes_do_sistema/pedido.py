@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 from datetime import datetime
 from partes_do_sistema.item_pedido import ItemPedido
 
@@ -20,6 +21,7 @@ class Pedido:
             print(f"Estoque insuficiente para o produto {produto.nome}")
 
     def atualizar_valor_total(self):
+    # Implementar integração com banco de dados usando database_config.conectar()
         self.valor_total = sum(item.subtotal for item in self.itens)
 
     def finalizar_pedido(self):

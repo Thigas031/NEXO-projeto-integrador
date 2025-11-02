@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 import customtkinter as ctk
 
 class TelaPrincipal(ctk.CTkFrame):
@@ -25,6 +26,7 @@ class TelaPrincipal(ctk.CTkFrame):
         self.atualizar()
 
     def atualizar(self):
+    # TODO: Implementar integração com banco de dados usando database_config.conectar()
         # limpar
         for w in self.lista_frame.winfo_children():
             w.destroy()

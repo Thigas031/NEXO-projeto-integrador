@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 from partes_do_sistema.pedido import Pedido
 from logica_do_sistema.relatorios import Relatorio
 
@@ -18,10 +19,12 @@ class Loja:
         self.pedidos.append(pedido)
 
     def listar_clientes(self):
+    # Implementar integração com banco de dados usando database_config.conectar()
         for cliente in self.clientes:
             print(cliente)
 
     def listar_estoque(self):
+    # Implementar integração com banco de dados usando database_config.conectar()
         for produto in self.estoque:
             print(produto)
 

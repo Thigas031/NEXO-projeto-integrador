@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 import customtkinter as ctk
 
 class TelaRelatorio(ctk.CTkFrame):
@@ -12,6 +13,7 @@ class TelaRelatorio(ctk.CTkFrame):
         self.kpi_label.pack(pady=8)
 
     def atualizar(self):
+    # TODO: Implementar integração com banco de dados usando database_config.conectar()
         u = self.app.usuario_logado
         if not u:
             self.kpi_label.configure(text="Faça login para ver relatórios.")

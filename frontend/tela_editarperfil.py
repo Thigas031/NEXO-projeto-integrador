@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 import customtkinter as ctk
 
 class TelaEditarPerfil(ctk.CTkFrame):
@@ -15,6 +16,7 @@ class TelaEditarPerfil(ctk.CTkFrame):
         ctk.CTkButton(frm, text="Salvar", command=self.salvar).pack(pady=8)
 
     def atualizar(self):
+    # TODO: Implementar integração com banco de dados usando database_config.conectar()
         u = self.app.usuario_logado
         if not u: return
         dados = self.backend.obter_usuario_por_id(u['id'])
@@ -22,6 +24,7 @@ class TelaEditarPerfil(ctk.CTkFrame):
         self.telefone.delete(0, 'end'); self.telefone.insert(0, dados.get('telefone') or '')
 
     def salvar(self):
+    # TODO: Implementar integração com banco de dados usando database_config.conectar()
         # Para simplificar, implementamos apenas atualização simples via SQL direto
         u = self.app.usuario_logado
         if not u: return

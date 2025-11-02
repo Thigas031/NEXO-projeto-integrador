@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 class ItemPedido:
     def __init__(self, produto, quantidade):
         self.produto = produto

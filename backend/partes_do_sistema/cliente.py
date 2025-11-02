@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 from partes_do_sistema.usuario_base import UsuarioBase
 
 class Cliente(UsuarioBase):
@@ -12,6 +13,7 @@ class Cliente(UsuarioBase):
         self.historico_pedidos.append(pedido)
 
     def listar_pedidos(self):
+    # Implementar integração com banco de dados usando database_config.conectar()
         #Lista todos os pedidos realizados pelo cliente.
         for pedido in self.historico_pedidos:
             print(pedido)
@@ -35,6 +37,7 @@ class Cliente(UsuarioBase):
             print("Este produto não está nos seus favoritos.")
 
     def listar_favoritos(self):
+    # Implementar integração com banco de dados usando database_config.conectar()
         #Lista os produtos favoritos do cliente.
         if not self.favoritos:
             print("Nenhum produto favorito ainda.")

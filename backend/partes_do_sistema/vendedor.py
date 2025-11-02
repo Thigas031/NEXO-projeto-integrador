@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 from partes_do_sistema.usuario_base import UsuarioBase
 
 class Vendedor(UsuarioBase):

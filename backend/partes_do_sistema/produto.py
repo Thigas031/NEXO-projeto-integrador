@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 class Produto:
     def __init__(self, id_produto, nome, preco, quantidade_estoque, categoria):
         self.id_produto = id_produto
@@ -7,6 +8,7 @@ class Produto:
         self.categoria = categoria
 
     def atualizar_estoque(self, quantidade):
+    # TODO: Implementar integração com banco de dados usando database_config.conectar()
         self.quantidade_estoque += quantidade
 
     def __str__(self):

@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 import customtkinter as ctk
 
 class TelaProduto(ctk.CTkFrame):
@@ -72,6 +73,7 @@ class TelaProduto(ctk.CTkFrame):
         estoque = ctk.CTkEntry(frm, placeholder_text="Estoque", width=200); estoque.insert(0, str(self.produto_atual['estoque'])); estoque.pack(pady=6)
 
         def salvar():
+    # TODO: Implementar integração com banco de dados usando database_config.conectar()
             try:
                 pval = float(preco.get())
                 est = int(estoque.get())

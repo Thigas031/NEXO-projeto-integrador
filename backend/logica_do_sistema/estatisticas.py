@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 class Estatisticas:
     def __init__(self, loja):
         self.loja = loja 

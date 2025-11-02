@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 import customtkinter as ctk
 
 class TelaCadastro(ctk.CTkFrame):

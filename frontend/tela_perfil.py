@@ -1,3 +1,4 @@
+import database_config  # integração futura com o banco de dados
 import customtkinter as ctk
 
 class TelaPerfil(ctk.CTkFrame):
@@ -23,6 +24,7 @@ class TelaPerfil(ctk.CTkFrame):
         ctk.CTkButton(self, text="Ver meus produtos", command=self.ver_meus_produtos).pack(pady=6)
 
     def atualizar(self):
+    # TODO: Implementar integração com banco de dados usando database_config.conectar()
         # atualiza com base no usuário logado (se houver)
         u = self.app.usuario_logado
         if not u:
