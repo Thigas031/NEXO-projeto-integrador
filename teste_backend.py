@@ -1,4 +1,4 @@
-from backend.loja import Loja
+from models.loja import Loja
 
 loja = Loja()
 

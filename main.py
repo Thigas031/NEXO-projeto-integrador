@@ -1,4 +1,4 @@
-from frontend.login import LoginCadastroScreen
+from views.cadastro import TelaCadastroInicial
 
 if __name__ == "__main__":
-    LoginCadastroScreen().mainloop()
+    TelaCadastroInicial().mainloop()
