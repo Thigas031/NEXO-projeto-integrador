@@ -1,0 +1,24 @@
+{
+  "next_produto_id": 11,
+  "next_pedido_id": 1,
+  "next_cliente_id": 1,
+  "next_usuario_id": 3,
+  "produtos": [
+    {"id": 1, "nome": "Notebook Slim", "categoria": "Eletrônicos", "preco": 2500.0, "estoque": 5, "imagem": null, "descricao": "", "id_do_vendedor": 1},
+    {"id": 2, "nome": "Headphone", "categoria": "Eletrônicos", "preco": 350.0, "estoque": 10, "imagem": null, "descricao": "", "id_do_vendedor": 1},
+    {"id": 3, "nome": "Camiseta Basic", "categoria": "Moda", "preco": 49.9, "estoque": 30, "imagem": null, "descricao": "", "id_do_vendedor": 1},
+    {"id": 4, "nome": "Calca Jeans", "categoria": "Moda", "preco": 129.9, "estoque": 20, "imagem": null, "descricao": "", "id_do_vendedor": 1},
+    {"id": 5, "nome": "Arroz 5kg", "categoria": "Supermercado", "preco": 25.0, "estoque": 100, "imagem": null, "descricao": "", "id_do_vendedor": 1},
+    {"id": 6, "nome": "Feijao 1kg", "categoria": "Supermercado", "preco": 8.5, "estoque": 80, "imagem": null, "descricao": "", "id_do_vendedor": 1},
+    {"id": 7, "nome": "Bola de Futebol", "categoria": "Esportes", "preco": 120.0, "estoque": 15, "imagem": null, "descricao": "", "id_do_vendedor": 1},
+    {"id": 8, "nome": "Bicicleta Mountain", "categoria": "Esportes", "preco": 1200.0, "estoque": 5, "imagem": null, "descricao": "", "id_do_vendedor": 1},
+    {"id": 9, "nome": "Jogo de Cama", "categoria": "Casa", "preco": 200.0, "estoque": 15, "imagem": null, "descricao": "", "id_do_vendedor": 1},
+    {"id": 10, "nome": "Cortinas Blackout", "categoria": "Casa", "preco": 180.0, "estoque": 10, "imagem": null, "descricao": "", "id_do_vendedor": 1}
+  ],
+  "usuarios": [
+    {"id": 1, "nome": "admV", "email": "admV@example.com", "telefone": "", "endereco": "", "papel": "vendedor", "favoritos": {"itens": []}, "cpf": "11122233344", "nome_loja": "Loja ADM V", "produtos_do_vendedor": [1,2,3,4,5,6,7,8,9,10], "senha": "123"},
+    {"id": 2, "nome": "admc", "email": "admc@example.com", "telefone": "", "endereco": "", "papel": "cliente", "favoritos": {"itens": []}, "senha": "1234"}
+  ],
+  "clientes": [],
+  "pedidos": []
+}
