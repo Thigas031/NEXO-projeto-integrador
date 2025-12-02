@@ -1,24 +1,207 @@
 {
-  "next_produto_id": 11,
-  "next_pedido_id": 1,
-  "next_cliente_id": 1,
+  "next_produto_id": 12,
+  "next_pedido_id": 3,
+  "next_cliente_id": 3,
   "next_usuario_id": 3,
-  "produtos": [
-    {"id": 1, "nome": "Notebook Slim", "categoria": "Eletrônicos", "preco": 2500.0, "estoque": 5, "imagem": null, "descricao": "", "id_do_vendedor": 1},
-    {"id": 2, "nome": "Headphone", "categoria": "Eletrônicos", "preco": 350.0, "estoque": 10, "imagem": null, "descricao": "", "id_do_vendedor": 1},
-    {"id": 3, "nome": "Camiseta Basic", "categoria": "Moda", "preco": 49.9, "estoque": 30, "imagem": null, "descricao": "", "id_do_vendedor": 1},
-    {"id": 4, "nome": "Calca Jeans", "categoria": "Moda", "preco": 129.9, "estoque": 20, "imagem": null, "descricao": "", "id_do_vendedor": 1},
-    {"id": 5, "nome": "Arroz 5kg", "categoria": "Supermercado", "preco": 25.0, "estoque": 100, "imagem": null, "descricao": "", "id_do_vendedor": 1},
-    {"id": 6, "nome": "Feijao 1kg", "categoria": "Supermercado", "preco": 8.5, "estoque": 80, "imagem": null, "descricao": "", "id_do_vendedor": 1},
-    {"id": 7, "nome": "Bola de Futebol", "categoria": "Esportes", "preco": 120.0, "estoque": 15, "imagem": null, "descricao": "", "id_do_vendedor": 1},
-    {"id": 8, "nome": "Bicicleta Mountain", "categoria": "Esportes", "preco": 1200.0, "estoque": 5, "imagem": null, "descricao": "", "id_do_vendedor": 1},
-    {"id": 9, "nome": "Jogo de Cama", "categoria": "Casa", "preco": 200.0, "estoque": 15, "imagem": null, "descricao": "", "id_do_vendedor": 1},
-    {"id": 10, "nome": "Cortinas Blackout", "categoria": "Casa", "preco": 180.0, "estoque": 10, "imagem": null, "descricao": "", "id_do_vendedor": 1}
-  ],
   "usuarios": [
-    {"id": 1, "nome": "admV", "email": "admV@example.com", "telefone": "", "endereco": "", "papel": "vendedor", "favoritos": {"itens": []}, "cpf": "11122233344", "nome_loja": "Loja ADM V", "produtos_do_vendedor": [1,2,3,4,5,6,7,8,9,10], "senha": "123"},
-    {"id": 2, "nome": "admc", "email": "admc@example.com", "telefone": "", "endereco": "", "papel": "cliente", "favoritos": {"itens": []}, "senha": "1234"}
+    {
+      "id": 1,
+      "nome": "admV",
+      "senha": "123",
+      "email": "admV@example.com",
+      "telefone": "11999999999",
+      "endereco": "Rua A, 100",
+      "papel": "vendedor",
+      "favoritos": {
+        "itens": []
+      },
+      "cpf": "11122233344",
+      "nome_loja": "Loja ADM V",
+      "produtos_do_vendedor": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "admc",
+      "senha": "123",
+      "email": "admc@example.com",
+      "telefone": "11988888888",
+      "endereco": "Rua B, 200",
+      "papel": "cliente",
+      "favoritos": {
+        "itens": []
+      }
+    }
   ],
-  "clientes": [],
-  "pedidos": []
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Notebook Slim",
+      "categoria": "Eletrônicos",
+      "preco": 2500.0,
+      "estoque": 5,
+      "imagem": null,
+      "descricao": "Notebook portátil com SSD",
+      "id_do_vendedor": 1
+    },
+    {
+      "id": 2,
+      "nome": "Headphone",
+      "categoria": "Eletrônicos",
+      "preco": 350.0,
+      "estoque": 10,
+      "imagem": null,
+      "descricao": "Headphone com cancelamento de ruído",
+      "id_do_vendedor": 1
+    },
+    {
+      "id": 3,
+      "nome": "Camiseta Basic",
+      "categoria": "Moda",
+      "preco": 49.9,
+      "estoque": 30,
+      "imagem": null,
+      "descricao": "Camiseta 100% algodão",
+      "id_do_vendedor": 1
+    },
+    {
+      "id": 4,
+      "nome": "Calca Jeans",
+      "categoria": "Moda",
+      "preco": 129.9,
+      "estoque": 20,
+      "imagem": null,
+      "descricao": "Calça jeans azul",
+      "id_do_vendedor": 1
+    },
+    {
+      "id": 5,
+      "nome": "Arroz 5kg",
+      "categoria": "Supermercado",
+      "preco": 25.0,
+      "estoque": 100,
+      "imagem": null,
+      "descricao": "Arroz integral",
+      "id_do_vendedor": 1
+    },
+    {
+      "id": 6,
+      "nome": "Feijao 1kg",
+      "categoria": "Supermercado",
+      "preco": 8.5,
+      "estoque": 80,
+      "imagem": null,
+      "descricao": "Feijão carioca",
+      "id_do_vendedor": 1
+    },
+    {
+      "id": 7,
+      "nome": "Bola de Futebol",
+      "categoria": "Esportes",
+      "preco": 120.0,
+      "estoque": 15,
+      "imagem": null,
+      "descricao": "Bola de futebol oficial",
+      "id_do_vendedor": 1
+    },
+    {
+      "id": 8,
+      "nome": "Bicicleta Mountain",
+      "categoria": "Esportes",
+      "preco": 1200.0,
+      "estoque": 5,
+      "imagem": null,
+      "descricao": "Bicicleta mountain bike",
+      "id_do_vendedor": 1
+    },
+    {
+      "id": 9,
+      "nome": "Jogo de Cama",
+      "categoria": "Casa",
+      "preco": 200.0,
+      "estoque": 15,
+      "imagem": null,
+      "descricao": "Jogo de cama queen",
+      "id_do_vendedor": 1
+    },
+    {
+      "id": 10,
+      "nome": "Cortinas Blackout",
+      "categoria": "Casa",
+      "preco": 180.0,
+      "estoque": 10,
+      "imagem": null,
+      "descricao": "Cortina blackout 2 painéis",
+      "id_do_vendedor": 1
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "João Silva",
+      "email": "joao@example.com",
+      "telefone": "11987654321",
+      "endereco": "Rua C, 300",
+      "favoritos": {
+        "itens": []
+      }
+    },
+    {
+      "id": 2,
+      "nome": "Maria Santos",
+      "email": "maria@example.com",
+      "telefone": "11987654322",
+      "endereco": "Rua D, 400",
+      "favoritos": {
+        "itens": []
+      }
+    }
+  ],
+  "pedidos": [
+    {
+      "id": 1,
+      "cliente": 1,
+      "data": "01/12/2025 20:51",
+      "itens": [
+        {
+          "produto_id": 1,
+          "quantidade": 1,
+          "preco_unitario": 2500.0
+        },
+        {
+          "produto_id": 3,
+          "quantidade": 2,
+          "preco_unitario": 49.9
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "cliente": 2,
+      "data": "01/12/2025 20:51",
+      "itens": [
+        {
+          "produto_id": 2,
+          "quantidade": 1,
+          "preco_unitario": 350.0
+        },
+        {
+          "produto_id": 4,
+          "quantidade": 1,
+          "preco_unitario": 129.9
+        }
+      ]
+    }
+  ]
 }

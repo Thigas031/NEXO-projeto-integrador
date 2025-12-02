@@ -1,8 +1,3 @@
-"""
-MODELO DE CLIENTE
-Dados do cliente/usuário que realiza compras
-"""
-
 from models.favoritos import Favoritos
 
 
@@ -10,15 +5,58 @@ class Cliente:
     """Representa um cliente da loja."""
     
     def __init__(self, id, nome, email, telefone="", endereco=""):
-        self.id = id
-        self.nome = nome
-        self.email = email
-        self.telefone = telefone
-        self.endereco = endereco
-        self.favoritos = Favoritos()
+        self._id = id
+        self._nome = nome
+        self._email = email
+        self._telefone = telefone
+        self._endereco = endereco
+        self._favoritos = Favoritos()
+
+    @property
+    def id(self):
+        return self._id
+
+    @property
+    def nome(self):
+        return self._nome
+
+    @nome.setter
+    def nome(self, value):
+        self._nome = value
+
+    @property
+    def email(self):
+        return self._email
+
+    @email.setter
+    def email(self, value):
+        self._email = value
+
+    @property
+    def telefone(self):
+        return self._telefone
+
+    @telefone.setter
+    def telefone(self, value):
+        self._telefone = value
+
+    @property
+    def endereco(self):
+        return self._endereco
+
+    @endereco.setter
+    def endereco(self, value):
+        self._endereco = value
+
+    @property
+    def favoritos(self):
+        return self._favoritos
+
+    @favoritos.setter
+    def favoritos(self, value):
+        self._favoritos = value
 
     def atualizar_dados(self, nome=None, email=None, telefone=None, endereco=None):
-        """Atualiza dados do cliente."""
         if nome:
             self.nome = nome
         if email:
@@ -29,19 +67,15 @@ class Cliente:
             self.endereco = endereco
 
     def adicionar_favorito(self, produto_id):
-        """Adiciona produto aos favoritos."""
         return self.favoritos.adicionar(produto_id)
 
     def remover_favorito(self, produto_id):
-        """Remove produto dos favoritos."""
         return self.favoritos.remover(produto_id)
 
     def listar_favoritos(self):
-        """Lista todos os favoritos."""
         return self.favoritos.listar()
 
     def to_dict(self):
-        """Converte para dicionário."""
         return {
             "id": self.id,
             "nome": self.nome,
@@ -53,14 +87,7 @@ class Cliente:
 
     @staticmethod
     def from_dict(data):
-        """Cria objeto a partir de dicionário."""
-        cliente = Cliente(
-            data.get("id"),
-            data.get("nome"),
-            data.get("email"),
-            data.get("telefone", ""),
-            data.get("endereco", "")
-        )
-        fav_data = data.get("favoritos", {})
-        cliente.favoritos = Favoritos.from_dict(fav_data)
+        cliente = Cliente(data.get("id"), data.get("nome"), data.get("email"), data.get("telefone", ""), data.get("endereco", ""))
+        cliente.favoritos = Favoritos.from_dict(data.get("favoritos", {}))
         return cliente
+

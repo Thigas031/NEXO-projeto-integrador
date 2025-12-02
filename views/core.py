@@ -63,4 +63,5 @@ def _criar_produtos_teste():
         loja.cadastrar_produto(nome, categoria, preco, estoque)
 
 # Criar produtos ao inicializar
-_criar_produtos_teste()
+# Não criar produtos automaticamente: JSON é a única fonte da verdade.
+# _criar_produtos_teste()  # desativado

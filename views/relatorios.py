@@ -6,6 +6,8 @@ Exibe relatórios de vendas do vendedor com filtros por período
 import customtkinter as ctk
 from views.core import loja, usuario_logado
 from datetime import datetime
+import tkinter as tk
+from tkinter import messagebox, filedialog
 
 
 class TelaRelatorios:
@@ -67,6 +69,21 @@ class TelaRelatorios:
         )
         self.seg_periodo.set("Mês")
         self.seg_periodo.pack(side="left", padx=10)
+
+        # Botões de exportação
+        btn_export_pdf = ctk.CTkButton(
+            filtro_frame, text="Exportar PDF", width=120, height=36,
+            fg_color="#3b6bd8", hover_color="#4a7bf0",
+            command=self._exportar_pdf
+        )
+        btn_export_pdf.pack(side="right", padx=10)
+
+        btn_export_xlsx = ctk.CTkButton(
+            filtro_frame, text="Exportar XLSX", width=120, height=36,
+            fg_color="#3b8f5a", hover_color="#4aa46f",
+            command=self._exportar_excel
+        )
+        btn_export_xlsx.pack(side="right", padx=10)
         
         # Área principal
         main_frame = ctk.CTkFrame(self.container, fg_color="#0a0e27")
@@ -248,3 +265,55 @@ class TelaRelatorios:
         self.container.destroy()
         from views.home import TelaHome
         TelaHome().mainloop()
+
+    def _exportar_pdf(self):
+        """Gera e salva relatório em PDF usando a loja e mostra resultado."""
+        uid = usuario_logado.get("id")
+        periodo = self.periodo_selecionado
+        # Pergunta ao usuário onde salvar (diálogo)
+        from datetime import datetime
+        ts = datetime.now().strftime('%Y%m%d_%H%M%S')
+        default_name = f'relatorio_{uid}_{periodo}_{ts}.pdf'
+        caminho = filedialog.asksaveasfilename(
+            defaultextension='.pdf',
+            filetypes=[('PDF', '*.pdf')],
+            initialfile=default_name,
+            initialdir='relatorios',
+            title='Salvar relatório em PDF'
+        )
+        if not caminho:
+            return
+        try:
+            saved = loja.exportar_relatorio_pdf(uid, periodo, caminho)
+            if saved:
+                messagebox.showinfo('Exportado', f'Relatório PDF salvo em:\n{saved}')
+            else:
+                messagebox.showerror('Erro', 'Falha ao gerar o relatório PDF.')
+        except Exception as e:
+            messagebox.showerror('Erro', f'Erro ao exportar PDF:\n{e}')
+
+    def _exportar_excel(self):
+        """Gera e salva relatório em XLSX usando a loja e mostra resultado."""
+        uid = usuario_logado.get("id")
+        periodo = self.periodo_selecionado
+        # Pergunta ao usuário onde salvar (diálogo)
+        from datetime import datetime
+        ts = datetime.now().strftime('%Y%m%d_%H%M%S')
+        default_name = f'relatorio_{uid}_{periodo}_{ts}.xlsx'
+        caminho = filedialog.asksaveasfilename(
+            defaultextension='.xlsx',
+            filetypes=[('Excel', '*.xlsx'), ('All files', '*.*')],
+            initialfile=default_name,
+            initialdir='relatorios',
+            title='Salvar relatório em XLSX'
+        )
+        if not caminho:
+            return
+        try:
+            saved = loja.exportar_relatorio_excel(uid, periodo, caminho)
+            if saved:
+                messagebox.showinfo('Exportado', f'Relatório XLSX salvo em:\n{saved}')
+            else:
+                messagebox.showerror('Erro', 'Falha ao gerar o relatório XLSX.')
+        except Exception as e:
+            messagebox.showerror('Erro', f'Erro ao exportar XLSX:\n{e}')

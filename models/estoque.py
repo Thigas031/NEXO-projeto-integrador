@@ -1,22 +1,28 @@
+"""Gerenciamento de Estoque."""
+
+
 class Estoque:
+    """Gerencia produtos em estoque."""
+    
     def __init__(self):
-        self.produtos = []
+        self._produtos = []
+
+    @property
+    def produtos(self):
+        return self._produtos
 
     def adicionar(self, produto):
-        self.produtos.append(produto)
+        self._produtos.append(produto)
 
     def procurar(self, nome):
-        for p in self.produtos:
-            if p.nome.lower() == nome.lower():
-                return p
-        return None
+        return next((p for p in self._produtos if p.nome.lower() == nome.lower()), None)
 
     def todos(self):
-        return self.produtos
+        return self._produtos
 
     def remover(self, produto_id):
-        for p in list(self.produtos):
+        for p in self._produtos[:]:
             if p.id == produto_id:
-                self.produtos.remove(p)
+                self._produtos.remove(p)
                 return True
         return False
